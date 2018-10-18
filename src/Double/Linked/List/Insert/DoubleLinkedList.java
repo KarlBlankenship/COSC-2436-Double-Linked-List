@@ -54,6 +54,15 @@ public class DoubleLinkedList
         }
     }
     
+    private void display()
+    {
+        Node temp = head;
+        while (temp != null)
+        {
+            System.out.println(temp.value + " ");
+            temp = temp.next;
+        }
+    }
     
     /**
      * @param args the command line arguments
@@ -65,6 +74,7 @@ public class DoubleLinkedList
         
         dll.push("x");
         System.out.println("Push x");
+        dll.display();
         System.out.println("Head: " + dll.head.value);
         System.out.println("Tail: " + dll.tail.value);
     }

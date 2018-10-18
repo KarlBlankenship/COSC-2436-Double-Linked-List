@@ -31,12 +31,42 @@ public class DoubleLinkedList
         }
     }
     
+    // Create the head and tail pointers.
+    Node head;      // The head of the list.
+    Node tail;      // The tail of the list.
+    
+    private void push(String val)
+    {
+        // Create the new Node.
+        Node n = new Node(val);
+        
+        // Check to see if there is no current list and add singe node.
+        if (head == null)
+        {
+            head = n;
+            tail = n;
+        }
+        // Else, add the new node to the head and reset head pointer.
+        else
+        {
+            n.next = head;
+            head = n;
+        }
+    }
+    
     
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) 
+    {
+        // Create an instance of the DoubleLinkedList class.
+        DoubleLinkedList dll = new DoubleLinkedList();
+        
+        dll.push("x");
+        System.out.println("Push x");
+        System.out.println("Head: " + dll.head.value);
+        System.out.println("Tail: " + dll.tail.value);
     }
     
 }
